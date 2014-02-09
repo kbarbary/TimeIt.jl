@@ -6,17 +6,22 @@ magic in IPython.
 
 Installation:
 
-    julia> Pkg.clone("git://github.com/kbarbary/TimeIt.jl.git")
+```julia
+julia> Pkg.clone("git://github.com/kbarbary/TimeIt.jl.git")
+```
 
 Usage:
 
-    julia> using TimeIt
+```julia
+julia> using TimeIt
 
-    julia> x = rand(1000); y = rand(1000)
+julia> x = rand(10000); y = rand(10000)
 
-    julia> @timeit x .* y
+julia> @timeit x .* y
+10000 loops, best of 3: 58.59 µs per loop
+```
 
-Differences from Python `timeit`:
+Differences from IPython `%timeit`:
 
 * This macro doesn't turn off the garbage collector, whereas the
   Python version does. I haven't found consistent timings when turing
