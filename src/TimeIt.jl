@@ -35,17 +35,22 @@ macro timeit(ex)
         best = minimum(t) / n
 
         # Format to nano-, micro- or milliseconds.
+        factor = 1.
         if best < 1e-6
-            best *= 1e9
+            factor = 1e9
             pre = "n"
         elseif best < 1e-3
-            best *= 1e6
+            factor = 1e6
             pre = "\u00b5"
-        else
-            best *= 1e3
+        elseif best < 1.
+            factor = 1e3
             pre = "m"
+        else
+            factor = 1.
+            pre = ""
         end
-        @printf "%d loops, best of 3: %4.2f %ss per loop\n" n best pre
+        @printf "%d loops, best of 3: %4.2f %ss per loop\n" n best*factor pre
+        best
     end
 end
 

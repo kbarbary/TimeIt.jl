@@ -15,11 +15,14 @@ Usage:
 ```julia
 julia> using TimeIt
 
-julia> x = rand(10000); y = rand(10000)
+julia> x = rand(10000); y = rand(10000);
 
-julia> @timeit x .* y
+julia> @timeit x .* y;
 10000 loops, best of 3: 58.59 µs per loop
 ```
+
+The time per loop in seconds is returned, so you can do `t = @timeit x .* y`
+to record the timing.
 
 Differences from IPython `%timeit`:
 
