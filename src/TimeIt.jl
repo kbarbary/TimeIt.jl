@@ -1,6 +1,8 @@
 module TimeIt
 
-using Printf
+if VERSION >= v"0.7.0"
+    using Printf
+end
 
 export @timeit
 

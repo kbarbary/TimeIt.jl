@@ -4,6 +4,9 @@ TimeIt
 This module exports a `@timeit` macro that works similarly to the `%timeit`
 magic in IPython.
 
+**THIS PACKAGE IS DEPRECATED: It no longer works correctly on Julia v0.7+ due to scoping changes in Julia. Use `@btime` from [BenchmarkTools.jl](https://github.com/JuliaCI/BenchmarkTools.jl) instead.**
+
+
 Installation
 ------------
 
