@@ -1,5 +1,7 @@
 module TimeIt
 
+using Printf
+
 export @timeit
 
 macro timen(ex, n)
